@@ -11,6 +11,7 @@
 
 // globals
 const levelSize = vec2(38, 20); // size of play area
+
 let score = 0; // start score at 0
 let ball; // keep track of ball object
 let paddle; // keep track of player's paddle
@@ -134,10 +135,8 @@ function gameInit()
         for(let y=12; y<=levelSize.y-2; y+=1)
             new Brick(vec2(x,y), vec2(2,1)); // create a brick
 
-    let cameraPos;
-    cameraPos = levelSize.scale(.5); // center camera in level
-    let canvasFixedSize;
-    canvasFixedSize = vec2(1280, 720); // use a 720p fixed size canvas
+    setCameraPos(levelSize.scale(.5)); // center camera in level
+    setCanvasFixedSize(vec2(1280, 720)); // use a 720p fixed size canvas
 
     paddle = new Paddle; // create player's paddle
 
